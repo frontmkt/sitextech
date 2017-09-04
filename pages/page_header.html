@@ -1,0 +1,106 @@
+<div class="page-headset">
+<div class="page-logo">
+  <a href="/"><img src="{{ theme_img('logo-text.svg') }}" alt="Xtech Commerce" width="120"></a>
+</div>
+
+  <div class="page-menu">
+      <ul class="navbar">
+      <li class="menu-li">
+             <a class="menu-item" href="/planos-e-precos-loja-virtual">Planos</a>
+      </li>
+      <li class="menu-li">
+        <a href="#" id="Popover1" class="menu-item popover-arrow" data-placement="bottom" data-popover-content="#myPopover" data-trigger="hover focus mouseenter click">Plataforma</a>    
+            <ul class="popover-content popover">
+            <div class="arrow"></div>
+                <li>
+                      <a href="/recursos">Recursos</a>
+                </li>
+                <li>
+                      <a href="/exemplos-lojas-virtuais">Exemplos</a>
+                </li>
+                <li>
+                      <a href="/marketplaces">Marketplaces</a>
+                </li>            
+                 <li>
+                      <a href="http://app.xtechcommerce.com/" target="_blank">Aplicativo</a>
+                </li>
+            </ul>
+      </li>
+      <li class="menu-li">
+        <a href="#" id="Popover2"class="menu-item popover-arrow" data-placement="bottom" data-popover-content="#myPopover" data-trigger="hover focus mouseenter click">Conteúdo</a>
+        <ul class="popover-content popover">
+            <div class="arrow"></div>
+            <li>
+                  <a href="http://blog.xtechcommerce.com.br/" target="_blank">Blog</a>
+            </li>
+            <li>
+                  <a href="/ebooks">Ebooks</a>
+            </li>
+            <li>
+                  <a href="/blog">Notícias</a>
+            </li>            
+            <li>
+                  <a href="https://www.youtube.com/watch?v=xhRwnBBcCTY&list=PL26W6zCEGdl9AvUwFfDr7B1yJNTaOLN9F" target="_blank">Hangouts</a>
+            </li>
+            <li>
+                  <a href="http://suporte.xtechcommerce.com/hc/pt-br">Suporte</a>
+            </li>
+            <li>
+                <a href="http://eventos.xtechcommerce.com/">Eventos</a>
+            </li>
+        </ul>
+      </li>
+      <li class="menu-li">
+        <a href="#" id="Popover3" class="menu-item popover-arrow" data-placement="bottom" data-popover-content="#myPopover" data-trigger="hover focus mouseenter click">Mais</a>
+            <ul class="popover-content popover" style="left: -25px;">
+                <div class="arrow"></div>
+                <li>
+                      <a href="http://docs.xtechcommerce.apiary.io/">Documentação</a>
+                </li>
+                <li>
+                      <a href="/ecossistema">Ecossistema</a>
+                </li>
+                <li>
+                      <a href="/clientes-xtech-commerce">Cases</a>
+                </li>
+                <li>
+                      <a href="/programa">Parceria</a>
+                </li>
+                <li>
+                      <a href="/12-razoes-para-migrar-sua-loja-virtual-para-plataforma-xtech-commerce">Diferenciais</a>
+                </li>
+                <li>
+                      <a href="/transportadoras">Transportadoras</a>
+                </li>
+            </ul>        
+      </li>
+      <li>
+        <a href="/login" class="menu-item">Login</a>
+      </li>
+      <li>
+        <a href="https://manager.xtechcommerce.com/install/launcher?af={{ get_affiliate() }}" class="menu-item comecar">Começar</a>
+      </li>
+      
+      <li class="more-trigger">
+        <a class="menu-item more sidr-trigger" href="#sidr">{{ theme_img('navi.svg', 'Mais') }}</a>
+      </li>
+      
+        {#{% for page in get_children_of_page('top-navi') %}#}
+        {#  <a href="{{ site_url(page.slug) }}" class="menu-item">{{ page.title }}</a>#}
+        {#{% endfor %}#}
+      </ul>
+  </div>
+  
+<script>
+$(document).ready(function (){
+    $(".navbar>li").on({
+        mouseenter: function () {
+            $(this).children('.popover').show();
+        },
+        mouseleave: function () {
+            $(this).children('.popover').hide();
+        }
+    });   
+});
+</script>
+</div>

@@ -1,0 +1,47 @@
+<section class="page-header">
+
+    {% include 'pages/page_header.html' %}
+    
+    <div class="page-teaser">  
+      <h1>{{ page.title }}</h1>
+      <h2>{{ page.seo_title }}</h2>
+    </div>
+  
+</section>
+
+<section class="features">
+
+<h3 style="font-weight: 400; margin-top: -50px; text-transform: uppercase; text-align: center;">
+    <a href="/lojas-virtuais-temas-editados" style="color: #666;">Temas Editados</a>
+    &nbsp;&nbsp;|&nbsp;&nbsp;
+    <a href="javascript:void(0);" style="color: #666;">Projetos Personalizados</a>
+</h3>
+<br><br><br>
+
+<div class="page-partners">
+    <div class="row">
+{% for item in get_collection('examples3', {'limit': 500}) %}
+
+    <div class="column four">
+
+        <div class="screen-img">
+            <div class="inner">
+                <div class="hover" style="display:none;">
+                    <h3 class="item-title">{{ item['text:title'] }}</h3>
+                    <div class="item-body"><a href="{{ item['link:website']['url'] }}" target="_blank">{{ item['link:website']['text'] }}</a></div>
+                </div>
+                {{ host_img(item['image:screenshot'], 'medium') }}
+            </div>
+        </div>
+        
+    </div>
+
+    {% if loop.index % 3 == false %}
+    <div class="twocol-clearfix"></div>
+    {% endif %}
+
+{% endfor %}
+    </div>
+</div>
+
+</section>

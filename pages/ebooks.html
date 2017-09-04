@@ -1,0 +1,48 @@
+<section class="page-header">
+
+    {% include 'pages/page_header.html' %}
+
+    <div class="page-teaser">  
+      <h1>{{ page.title }}</h1>
+      <h2>{{ page.seo_title }}</h2>
+    </div>
+  
+</section>
+<section class="features">
+  <div class="page-ebooks" style="transform:skewY(3deg);">
+  
+<!--      <div class="text-ebook">
+          <p>Saiba mais sobre os principais temas para construir uma história de sucesso.</p>
+      </div>
+-->      
+      <div class="row">
+        {% for item in get_collection('ebooks', {'limit': 500}) %}
+              
+        <div class="column six">
+          <div class="row">  
+            <a href="{{ item['link:website']['url'] }}" target="_blank">
+                <div class="column six">
+                  <div class="inner rectangle-img">
+                    
+                      {{ host_img(item['image:image'], 'small', {'alt': item['text:alt']}) }}          
+                    
+                  </div>
+                </div>
+                  
+                <div class="column six clearfix">
+                  <h4 class="item-title title-h4">{{ item['text:title'] }}</h4>
+                  <div class="item-body">{{ item['textarea:body'] }}</div>
+                </div>
+            </a>
+          </div>
+        </div>
+              
+        {% if loop.index % 2 == false %}
+        <div class="twocol-clearfix"></div>
+        {% endif %}
+                        
+        {% endfor %}
+    </div>
+  </div>
+    
+</section>

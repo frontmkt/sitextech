@@ -1,0 +1,50 @@
+<section class="page-header">
+
+    {% include 'pages/page_header.html' %}
+    
+    <div class="page-teaser">  
+      <h1>{{ page.title }}</h1>
+      <h2>{{ page.seo_title }}</h2>
+    </div>
+  
+</section>
+
+<section class="features">
+    <div class="ubk">
+        {% for key, items in get_collection('features', {'key': 'select:category', 'limit': 500}) %}
+        <div class="page-features{{ loop.last ? ' last' : '' }}">
+            <div class="row">
+                <div class="column three">
+                    <h2>{{ key }}</h2>
+                </div>
+            
+                <div class="column nine">
+                    <div class="clearfix">
+            
+                        {% for item in items %}
+                            <div class="feat-item"><strong>{{ item['text:title'] }}</strong> - {{ item['textarea:body'] }}</div>
+                            
+                            {% if loop.index % 3 == 0 %}
+                            <div class="break"></div>
+                            {% endif %}
+                        {% endfor %}
+            
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<section class="page-integrations">
+    <h2>Conectada com as melhores soluções do mercado</h2>
+    <h3 id="integration">Veja algumas integrações</h3>
+    <div class="row integration-cicles">
+
+        {% for item in get_collection('integrations') %}
+            <div class="column two"><a href="#" title="{{ item['text:description'] }}"><div class="circle-text"><div>{{ item['text:title'] }}</div></div></a></div>
+        {% endfor %}
+
+    </div>
+</section>

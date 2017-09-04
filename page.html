@@ -1,0 +1,77 @@
+{% extends _layout %}
+
+{% block content %}
+
+{% if page.slug in ['marketplaces', 'clientes-xtech-commerce', 'recursos', 'planos-e-precos-loja-virtual', 'blog', 'agencies', 'ecossistema', 'exemplos-lojas-virtuais', 'lojas-virtuais-projetos-personalizados', 'lojas-virtuais-temas-editados', 'transportadoras', 'ebooks', 'teste'] %}    {% include 'pages/' ~ page.slug ~ '.html' ignore missing %}
+
+{% else %}
+
+    <section class="page-header">
+
+        {% include 'pages/page_header.html' %}
+        
+        <div class="page-teaser">  
+          <h1>{{ page.title }}</h1>
+          <h2>{{ page.seo_title }}</h2>
+        </div>
+     
+    </section>
+
+    <section class="page-content">
+        <div class="ubk">
+      <div class="row">
+
+        <div class="column {{ page.slug == 'stelo' ? 'twelve' : page.slug != 'programa' ? 'six' : 'eight' }}">
+          {{ page.content|raw }}
+        </div>
+
+        {% if page.slug != 'programa' and page.slug != 'stelo' %}
+            <div class="column five">
+    
+              <h3>Fale com nosso GURU</h3>
+              <p>Entre em contato usando o formulário abaixo:</p>
+              {{ form_open('contact/emailsender', {'id':'site-contact', 'class': 'form-common'}, {'subject': 'Contato ' ~ page.slug, 'referrer': current_url()}) }}
+              
+              <div class="form-group">
+                  <label for="sender_name">Nome</label>
+                  <input type="text" name="sender_name" value="" class="form-control" />
+              </div>
+              <div class="form-group">
+                  <label for="sender_email">Email</label>
+                  <input type="text" name="sender_email" value="" class="form-control" />
+              </div>
+              <div class="form-group">
+                  <label for="telefone">Telefone</label>
+                  <input type="text" name="telefone" value="" class="form-control" />
+              </div>
+              <div class="form-group">
+                  <label for="skype">Skype</label>
+                  <input type="text" name="skype" value="" class="form-control" />
+              </div>
+              <div class="form-group">
+                  <label for="message">Mensagem</label>
+                  <textarea name="message" cols="80" rows="6" class="form-control"></textarea>
+              </div>
+              <div class="form-group">
+                  <button type="submit" class="button blue">Enviar</button>
+              </div>
+              
+              {{ form_close() }}
+              
+            </div>
+        {% endif %}
+
+      </div></div>
+    </section>
+    
+<script type="text/javascript">
+    var __ss_noform = __ss_noform || [];
+    __ss_noform.push(['baseURI', 'https://app-3QN97N5G9K.marketingautomation.services/webforms/receivePostback/MzawMDG1MDExAgA/']);
+    __ss_noform.push(['form', 'site-contact', 'a44fdf21-0442-40d6-9b67-f038a08a71d4']);
+</script>
+<script type="text/javascript" src="https://koi-3QN97N5G9K.marketingautomation.services/client/noform.js?ver=1.24" ></script>
+
+
+{% endif %}
+
+{% endblock %}

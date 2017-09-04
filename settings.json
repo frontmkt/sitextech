@@ -1,0 +1,166 @@
+{
+    "template_settings": {
+        "group:general":          {"label": "Gerais"},        
+        "image:logo":             {"label": "Logotipo", "default": ""},
+        "font:body":              {"label": "Fonte padrão", "default": "Lato"},
+        "color:body":             {"label": "Fundo padrão", "default": "#f2f2f2"},
+        "color:text":             {"label": "Cor do texto padrão", "default": "#555555"},
+        "color:link":             {"label": "Link", "default": "#f85c37"},
+        "color:link_hover":       {"label": "Link Over", "default": "#7b7b7b"},
+        "color:btn_bg":           {"label": "Botão", "default": "#74cfae"},
+        "color:btn_font":         {"label": "Fonte Botão", "default": "#ffffff"},
+        "color:sale":             {"label": "Caixa de promoção", "default": "#f85c37"},
+    
+        "group:titles":           {"label": "Títulos"},        
+        "font:title":             {"label": "Fonte de títulos", "default": "Raleway"},
+        "color:title":            {"label": "Cor de títulos", "default": "#333333"},
+        
+        "group:navbar":           {"label": "Navegação"},        
+        "color:navbar":           {"label": "Barra de navegação", "default": "#FFFFFF"},
+        "color:text_navbar":      {"label": "Texto barra de navegação", "default": "#777777"},
+        "color:navbar_border":    {"label": "Linha barra de navegação", "default": "#e7e7e7"},
+    
+        "group:footer":           {"label": "Rodapé"},
+        "color:footer":           {"label": "Rodapé", "default": "#74cfae"},
+        "color:social":           {"label": "Ícones de redes sociais", "default": "#74cfae"},
+        
+        "group:boxes":            {"label": "Caixas"},
+        "color:boxes":            {"label": "Área das caixas", "default": "#4e4e4e"},
+        "if:box_1":               {"label": "Exibir caixa frete", "default": "1"},
+        "text:box_1_title":       {"label": "Caixa frete titulo", "default": "Frete Grátis"},
+        "text:box_1_link":        {"label": "Caixa frete link", "default": ""},
+        "if:box_2":               {"label": "Exibir caixa troca", "default": "1"},
+        "text:box_2_title":       {"label": "Caixa troca titulo", "default": "1ª Troca Grátis"},
+        "text:box_2_link":        {"label": "Caixa troca link", "default": ""},
+        "if:box_3":               {"label": "Exibir caixa parcelas", "default": "1"},
+        "text:box_3_title":       {"label": "Caixa parcelas titulo", "default": "Até 3x sem juros"},
+        "text:box_3_link":        {"label": "Caixa parcelas link", "default": ""},
+        "if:box_4":               {"label": "Exibir caixa telefone", "default": "1"},
+        "text:box_4_title":       {"label": "Caixa telefone titulo", "default": "0800 999 9999"},
+        "text:box_4_link":        {"label": "Caixa telefone link", "default": ""}
+    },
+    "collections": {
+        "blog": {
+            "name": "Blog",
+            "listing": "text:title",
+            "fields": {
+                "text:title":     {"label": "Titulo"},
+                "textarea:intro": {"label": "Introdução", "rich": true},
+                "textarea:body":  {"label": "Descrição completa", "rich": true},
+                "image:image":    {"label": "Imagem"},
+                "text:alt":       {"label": "Alt Text"}
+            }
+        },
+        "ebooks": {
+            "name": "Ebooks",
+            "listing": "text:title",
+            "fields": {
+                "text:title":     {"label": "Titulo"},
+                "textarea:body":  {"label": "Descrição"},
+                "link:website":   {"label": "Link para site"},
+                "image:image":    {"label": "Imagem"},
+                "text:alt":       {"label": "Alt Text"}
+            }
+        },
+        "features": {
+            "name": "Recursos",
+            "listing": "text:title",
+            "fields": {
+                "text:title":      {"label": "Titulo"},
+                "textarea:body":   {"label": "Descrição"},
+                "select:category": {"label": "Categoria", "default": "Templates", "options": ["Layout", "Estoque", "Marketing", "Relatórios", "Automação", "Conteúdo", "Catálogo", "Pagamentos", "Frete", "Canais", "Campaignator"]}
+            }
+        },
+        "integrations": {
+            "name": "Integrações",
+            "listing": "text:title",
+            "fields": {
+                "text:title":       {"label": "Titulo"},
+                "text:description": {"label": "Descrição"}
+            }
+        },
+        "testimonials": {
+            "name": "Depoimentos",
+            "listing": "text:title",
+            "fields": {
+                "text:title":       {"label": "Titulo"},
+                "textarea:message": {"label": "Depoimento"},
+                "text:position":    {"label": "Posição na empresa"},
+                "link:website":     {"label": "Link para site"},
+                "image:logo":       {"label": "Logotipo"},
+                "text:alt":         {"label": "Alt text"}
+            }
+        },
+        "convenants": {
+            "name": "Convênios",
+            "listing": "text:title",
+            "fields": {
+                "text:title":       {"label": "Empresa"},
+                "textarea:body":    {"label": "Descrição"},
+                "link:website":     {"label": "Link para site"},
+                "image:image":      {"label": "Logotipo"},
+                "text:alt":         {"label": "Alt text"}
+            }
+        },
+        "shipping_companies": {
+            "name": "Transportadoras",
+            "listing": "text:title",
+            "fields": {
+                "text:title":       {"label": "Empresa"},
+                "textarea:body":    {"label": "Descrição"},
+                "link:website":     {"label": "Link para site"},
+                "image:image":      {"label": "Logotipo"},
+                "text:alt":         {"label": "Alt text"}
+            }
+        },
+        "agencies": {
+            "name": "Agências Certificadas",
+            "listing": "text:title",
+            "fields": {
+                "text:title":       {"label": "Empresa"},
+                "textarea:body":    {"label": "Descrição"},
+                "link:website":     {"label": "Link para site"},
+                "image:image":      {"label": "Logotipo"}
+            }
+        },
+        "marketplaces": {
+            "name": "Marketplaces",
+            "listing": "text:title",
+            "fields": {
+                "text:title":       {"label": "Empresa"},
+                "textarea:body":    {"label": "Descrição"},
+                "link:website":     {"label": "Link para site"},
+                "image:image":      {"label": "Logotipo"},
+                "text:alt":         {"label": "Alt text"}
+            }
+        },
+        "examples": {
+            "name": "Exemplos",
+            "listing": "text:title",
+            "fields": {
+                "text:title":       {"label": "Empresa"},
+                "link:website":     {"label": "Link para site"},
+                "image:screenshot": {"label": "Screenshot"},
+                "text:alt": {"label": "Alt Text"}
+            }
+        },
+        "examples2": {
+            "name": "Temas Editados",
+            "listing": "text:title",
+            "fields": {
+                "text:title":       {"label": "Empresa"},
+                "link:website":     {"label": "Link para site"},
+                "image:screenshot": {"label": "Screenshot"}
+            }
+        },
+        "examples3": {
+            "name": "Projetos Personalizados",
+            "listing": "text:title",
+            "fields": {
+                "text:title":       {"label": "Empresa"},
+                "link:website":     {"label": "Link para site"},
+                "image:screenshot": {"label": "Screenshot"}
+            }
+        }
+    }
+}

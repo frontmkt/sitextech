@@ -1,0 +1,102 @@
+<section class="page-header">
+
+    {% include 'pages/page_header.html' %}
+    
+    <div class="page-teaser">  
+      <h1>{{ page.title }}</h1>
+      <h2>{{ page.seo_title }}</h2>
+    </div>
+  
+</section>
+
+
+<section class="blog">
+
+    <div class="row">
+
+        <div class="column three">
+            <div class="navi-common">
+                <h3>Arquivo</h3>
+                <ul class="content-nav">
+                {% for item in get_collection('blog', {'group_by': 'month'}) %}
+                    <li>
+                        <a href="{{ site_url('blog?month=' ~ item.cmonth ~ '&amp;year=' ~ item.cyear) }}">{{ item.cmonth }}-{{ item.cyear }} ({{ item.count }})</a>
+                    </li>
+                {% endfor %}
+                </ul>
+            </div>
+
+            {{ form_open('contact/newsletter_signup', {'class': 'form-common'}, {'redirect': current_url()}) }}
+            
+                <h3>Newsletter</h3>
+                <div class="form-group">
+                    <label for="sender_email">Email</label>
+                    <input type="text" name="email" value="" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="button blue">Cadastrar</button>
+                </div>
+            
+            {{ form_close() }}
+        </div>
+
+        <div class="column nine">
+
+            {% if request.get.single %}
+
+                <!-- Single -->
+                {% include 'pages/blog_single.html' %}
+
+            {% elseif request.get.category %}
+                
+                <!-- List -->
+                {% for item in get_collection('blog', {'paginate': true, 'limit': 5, 'month': request.get.month, 'year': request.get.year}) %}
+                    {% if request.get.category ==  item['text:category'] %}
+                        <div class="blog-item{{ loop.last ? ' last' : '' }}">
+                            <h2>
+                                <div class="date">{{ item.created_at|to_formatted_date }}</div>
+                                {{ item['text:title'] }}
+                            </h2>
+                            <div class="img">
+                                {{ host_img( item['image:image'], 'medium', {'alt': item['text:alt']} ) }}
+                            </div>
+                            <div class="body">
+                                {{ item['textarea:intro']|raw }}
+                            </div>
+                            <a href="{{ site_url('blog?single=' ~ item.slug) }}" class="button blue">Ler mais</a>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+
+            {{ get_collection_pagination() }}                
+                
+            {% else %}
+
+                <!-- List -->
+                {% for item in get_collection('blog', {'paginate': true, 'limit': 5, 'month': request.get.month, 'year': request.get.year}) %}
+                    <div class="blog-item{{ loop.last ? ' last' : '' }}">
+                        <h2>
+                            <div class="date">{{ item.created_at|to_formatted_date }}</div>
+                            {{ item['text:title'] }}
+                        </h2>
+                        <div class="img">
+                            {{ host_img(item['image:image'], 'medium') }}
+                        </div>
+                        <div class="body">
+                            {{ item['textarea:intro']|raw }}
+                        </div>
+                        <a href="{{ site_url('blog?single=' ~ item.slug) }}" class="button blue">Ler mais</a>
+                    </div>
+                {% endfor %}
+
+            {{ get_collection_pagination() }}
+
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+</section>
+

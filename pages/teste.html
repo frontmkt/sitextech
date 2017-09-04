@@ -1,0 +1,149 @@
+<section class="page-header">
+
+    {% include 'pages/page_header.html' %}
+    
+    <div class="page-teaser">  
+      <h1>{{ page.title }}</h1>
+      <h2>{{ page.seo_title }}</h2>
+    </div>
+  
+</section>
+
+<section class="features">
+    <div class="ubk">
+        <div class="page-features{{ loop.last ? ' last' : '' }}">
+            <div class="row" style="padding-bottom: 30px;">
+
+                <h2 style="font-size: 36px;
+                           color: rgb(112,112,112);
+                           text-align: center;
+                           margin-bottom: 50px;">CANAIS</h2>
+
+                <div class="column twelve" style="margin-bottom: 30px">
+
+                    <div class="column three">
+                        <h4 style="    
+                                        width: 100%;
+                                        color: rgb(112,112,112);
+                                        text-transform: uppercase;
+                                        font-weight: 500;
+                                        letter-spacing: 1px;
+                                        ">POS (em breve)</h4>
+                        <p style="max-width: 100%;margin-bottom: 30px;font-size: 15px;">Em breve uma solução para facilitar sua venda presencial e integrar todos os canais do seu site de vendas. Caso use algum outro sistema, você pode utilizar nossa API e checar a viabilidade de integração.</p>
+                    </div>
+                    <div class="column three">
+                        <h4 style="    
+                                        width: 100%;
+                                        color: rgb(112,112,112);
+                                        text-transform: uppercase;
+                                        font-weight: 500;
+                                        letter-spacing: 1px;">Televendas</h4>
+                        <p style="max-width: 100%;    margin-bottom: 30px;font-size: 15px;">Venda seus produtos por telefone ou Whatsapp, crie o pedido para seu cliente e mande a página de pagamento para ele realizar a compra com segurança e você manter seu estoque e histórico de vendas atualizado.</p>
+                    </div>
+                    <div class="column three">
+                        <h4 style="    
+                                        width: 100%;
+                                        color: rgb(112,112,112);
+                                        text-transform: uppercase;
+                                        font-weight: 500;
+                                        letter-spacing: 1px;">Marketplaces</h4>
+                        <p style="max-width: 100%;    margin-bottom: 30px;font-size: 15px;">Oferecemos integração inteligente e automática para você vender seus produtos nos principais marketplaces do mercado como: Walmart, Mercado Livre, B2W (Americanas, Shoptime, Submarino) e CNova (Extra, Ponto Frio e Casas Bahia).</p>
+                    </div>
+                    <div class="column three">
+                        <h4 style="    
+                                        width: 100%;
+                                        color: rgb(112,112,112);
+                                        text-transform: uppercase;
+                                        font-weight: 500;
+                                        letter-spacing: 1px;">Loja Web</h4>
+                        <p style="max-width: 100%;    margin-bottom: 30px;">Temas desenvolvidos com as melhores práticas web para sua loja rápida, moderna e segura.</p>
+                    </div>
+                </div>
+                <div class="column twelve painel" style="margin-bottom: 30px">
+
+                    <div class="column three mais">
+                        <h4 style="    
+                                        width: 100%;
+                                        color: rgb(112,112,112);
+                                        text-transform: uppercase;
+                                        font-weight: 500;
+                                        letter-spacing: 1px;">POS (em breve)</h4>
+                        <p style="max-width: 100%;    margin-bottom: 30px;font-size: 15px;">Em breve uma solução para facilitar sua venda presencial e integrar todos os canais do seu site de vendas. Caso use algum outro sistema, você pode utilizar nossa API e checar a viabilidade de integração.</p>
+                    </div>
+                    <div class="column three mais">
+                        <h4 style="    
+                                        width: 100%;
+                                        color: rgb(112,112,112);
+                                        text-transform: uppercase;
+                                        font-weight: 500;
+                                        letter-spacing: 1px;">Televendas</h4>
+                        <p style="max-width: 100%;    margin-bottom: 30px;font-size: 15px;">Venda seus produtos por telefone ou Whatsapp, crie o pedido para seu cliente e mande a página de pagamento para ele realizar a compra com segurança e você manter seu estoque e histórico de vendas atualizado.</p>
+                    </div>
+
+                    <div class="botao-mais" style="clear: both;text-align: center;">
+                        <a style="color: #0060FD;
+                            background-color: #fff;
+                            border-color: #0060FD;
+                            border-radius: 0;
+                            border-width: 0;
+                            border-bottom-width: 2px;
+                            font-size: 20px;
+                            text-transform: none;
+                            border: 1px solid;
+                            display: inline-block;
+                            padding: 10px 21px;
+                            ">
+                            
+                            Abrir mais recursos
+                        </a>
+                    </div>
+                </div>
+
+            <!--  
+
+                {% for key, items in get_collection('features', {'key': 'select:category', 'limit': 500}) %}
+                <div class="column three">
+                    <h2>{{ key }}</h2>
+                </div>
+            
+                <div class="column nine">
+                    <div class="clearfix">
+            
+                            <div class="feat-item"><strong>{{ item['text:title'] }}</strong> - {{ item['textarea:body'] }}</div>
+                            
+                            {% if loop.index % 3 == 0 %}
+                            <div class="break"></div>
+                            ou
+                            <div class="twocol-clearfix"></div>
+                            {% endif %}
+                        {% endfor %}
+            
+                    </div>
+                </div>
+            -->
+
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="page-integrations">
+    <h2>Conectada com as melhores soluções do mercado</h2>
+    <h3 id="integration">Veja algumas integrações</h3>
+    <div class="row integration-cicles">
+    <!--
+        {% for item in get_collection('integrations') %}
+            <div class="column two"><a href="#" title="{{ item['text:description'] }}"><div class="circle-text"><div>{{ item['text:title'] }}</div></div></a></div>
+        {% endfor %}
+    -->
+
+    </div>
+</section>
+
+    <script type="text/javascript">
+        $('.painel').addClass('painel-compacto');
+        $('.painel .botao-mais').click(function(){
+            $('.painel').removeClass('painel-compacto');
+        });
+    </script>

@@ -1,0 +1,316 @@
+{% extends _layout %}
+
+{% block header %}
+    <meta name="google-site-verification" content="MhSaAF3Q8OMKKnDF55By66fo7e9pBTw3kPFEy-15RH8" />
+
+    <section class="intro">
+        <div class="top-left-logo">
+            <a href="/">
+                <img src="{{ theme_img('logo-text.svg') }}" alt="Xtech">
+            </a>
+        </div>
+        
+        <div class="page-menu">
+            <ul class="navbar">
+                <li class="menu-li">
+                    <a class="menu-item" href="/planos-e-precos-loja-virtual">
+                        Planos
+                    </a>
+                </li>
+                
+                <li class="menu-li">
+                    <a href="#" id="Popover1" class="menu-item popover-arrow" data-placement="bottom" data-popover-content="#myPopover" data-trigger="hover focus mouseenter click">
+                        Plataforma
+                    </a>    
+                
+                    <ul class="popover-content popover">
+                        <div class="arrow"></div>
+                        <li>
+                            <a href="/recursos">Recursos</a>
+                        </li>
+                        <li>
+                            <a href="/exemplos-lojas-virtuais">Exemplos</a>
+                        </li>
+                        <li>
+                            <a href="/marketplaces">Marketplaces</a>
+                        </li>            
+                        <li>
+                            <a href="http://app.xtechcommerce.com/" target="_blank">Aplicativo</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="menu-li">
+                    <a href="#" id="Popover2"class="menu-item popover-arrow" data-placement="bottom" data-popover-content="#myPopover" data-trigger="hover focus mouseenter click">
+                        Conteúdo
+                    </a>
+          
+                    <ul class="popover-content popover">
+                        <div class="arrow"></div>
+                        <li>
+                            <a href="http://blog.xtechcommerce.com.br/" target="_blank">Blog</a>
+                        </li>
+                        <li>
+                            <a href="/ebooks">Ebooks</a>
+                        </li>
+                        <li>
+                            <a href="/blog">Notícias</a>
+                        </li>            
+                        <li>
+                            <a href="https://www.youtube.com/watch?v=xhRwnBBcCTY&list=PL26W6zCEGdl9AvUwFfDr7B1yJNTaOLN9F" target="_blank">Hangouts</a>
+                        </li>
+                        <li>
+                            <a href="http://suporte.xtechcommerce.com/hc/pt-br">Suporte</a>
+                        </li>
+                        <li>
+                            <a href="http://eventos.xtechcommerce.com/">Eventos</a>
+                        </li>
+                    </ul>
+                </li>
+          
+                <li class="menu-li">
+                    <a href="#" id="Popover3" class="menu-item popover-arrow" data-placement="bottom" data-popover-content="#myPopover" data-trigger="hover focus mouseenter click">
+                        Mais
+                    </a>
+                
+                    <ul class="popover-content popover" style="left: -25px;">
+                        <div class="arrow"></div>
+                        <li>
+                              <a href="http://docs.xtechcommerce.apiary.io/">Documentação</a>
+                        </li>
+                        <li>
+                              <a href="/ecossistema">Ecossistema</a>
+                        </li>
+                        <li>
+                              <a href="/clientes-xtech-commerce">Cases</a>
+                        </li>
+                        <li>
+                              <a href="/programa">Parceria</a>
+                        </li>
+                        <li>
+                              <a href="/12-razoes-para-migrar-sua-loja-virtual-para-plataforma-xtech-commerce">Diferenciais</a>
+                        </li>
+                        <li>
+                              <a href="/transportadoras">Transportadoras</a>
+                        </li>
+                    </ul>        
+                </li>
+              
+                <li>
+                    <a href="/login" class="menu-item">Login</a>
+                </li>
+              
+                <li>
+                    <a href="//manager.xtechcommerce.com/install/launcher?af={{ get_affiliate() }}" class="menu-item comecar">Começar</a>
+                </li>
+          
+                <li class="more-trigger">
+                    <a class="menu-item more sidr-trigger" href="#sidr">{{ theme_img('navi.svg', 'Mais') }}</a>
+                </li>
+            
+                {#{% for page in get_children_of_page('top-navi') %}#}
+                    {#  <a href="{{ site_url(page.slug) }}" class="menu-item">{{ page.title }}</a>#}
+                {#{% endfor %}#}
+            </ul>
+        </div>
+  
+        <script>
+            $(document).ready(function () {
+                $(".navbar>li").on({
+                    mouseenter: function () {
+                        $(this).children('.popover').show();
+                    },
+                    mouseleave: function () {
+                        $(this).children('.popover').hide();
+                    }
+                });   
+            });
+        </script>
+
+        <div class="v-center intro-content">
+            <h1><strong>Muito além de uma plataforma, a revolução do e-commerce</strong></h1>
+            <br>
+            <p class="header-text-medium">Crie sua loja multicanal, linda, completa e inteligente</p>
+        
+            <div class="register-wrap intro-register">
+                <div class="register-form">
+                    <span class="domain"></span>
+                    <a href="//manager.xtechcommerce.com/install/launcher?af={{ get_affiliate() }}" class="button" title="Signup">
+                        Comece a criar sua loja
+                    </a>
+                </div>
+            </div> 
+            <small class="inicie">Inicie hoje sua avaliação grátis de 15 dias!</small><br>
+        </div>
+    </section>
+
+{% endblock %}
+
+{% block content %}
+
+<section class="features feedback">
+    <div class="ubk">
+        <div class="row">
+        
+            <div class="column seven">
+                <a href="/exemplos-lojas-virtuais" target="_blank">
+                    {{ theme_img('garimppo.jpg', 'Interface') }}
+                </a>
+            </div>
+            
+            <div class="column five">
+              <h2>Sua loja linda e customizada</h2>
+              <p>Você não precisa ter conhecimento técnico ou ser web designer para criar uma loja profissional.</p>
+              <p>Conheça nossos temas inspirados nos maiores <br>
+                e-commerce do mundo e personalize sua loja através do editor de temas. Usuários avançados têm controle total no HTML e CSS com nosso kit de desenvolvimento.</p>
+              <div class="actions">
+                <a href="{{ site_url('recursos') }}" class="button invert">Veja todos os recursos</a>
+              </div>
+            </div>
+            
+        </div>
+        
+    </div>
+
+</section>
+
+<section class="features campaignator">
+    <div class="ubk">
+
+      <div class="row">
+    
+        <div class="column six">
+    
+          <h2>Ferramenta de
+            Marketing Inteligente</h2>
+          <p>
+            Explore uma máquina de vendas revolucionária e <br>
+            crie impulsos de compra através da automação.
+          </p>
+          <p>
+            Crie e gerencie campanhas de marketing através de um sistema intuitivo e faça suas vendas decolarem!
+          </p>
+          <div class="actions">
+            <a href="//manager.xtechcommerce.com/install/launcher?af={{ get_affiliate() }}" class="button invert">Experimente a ferramenta do futuro</a>
+          </div>
+        
+        </div>
+    
+        {{ theme_img('robo_grey.gif', 'Campaignator') }}
+    </div>
+
+  </div>
+
+</section>
+
+<section class="features channel">
+    <div class="ubk">
+
+        <div class="row">
+    
+            <div class="column seven">
+            
+              {{ theme_img('support.gif', 'Support') }}
+            
+            </div>
+            
+            <div class="column five">
+            
+              <h2>Suporte de outro planeta</h2>
+              <p>Oferecer o melhor sistema ou ser uma plataforma fácil de gerenciar não é o suficiente para conquistar resultados extraordinários.</p>
+              <p>Desfrute de um time de especialistas para tirar suas dúvidas, trocar experiências e juntos conquistarmos os melhores resultados.</p>
+              <div class="actions">
+                <a href="{{ site_url('clientes-xtech-commerce') }}" class="button invert">Veja o que nossos clientes dizem</a>
+              </div>
+            
+            </div>
+        
+        </div>
+
+    </div>
+</section>
+
+<section class="features marketplace">
+    <div class="ubk">
+
+      <div class="row">
+    
+        <div class="column four">
+        
+          <h2>Venda nas maiores lojas
+          </h2>
+          <p>Comece a vender seus produtos nos maiores varejstas online do Brasil através da nossa integração.</p>
+          <p>Gerencie seu estoque, pedidos, pagamentos e entregas em um só lugar de forma automática.</p>
+          <div class="actions">
+            <a href="//manager.xtechcommerce.com/install/launcher?af={{ get_affiliate() }}" class="button invert">Crie sua loja multicanal</a>
+          </div>
+        
+        </div>
+        
+        <div class="column eight">
+        
+          {{ theme_img('marketplace.jpg', 'Marketplace') }}
+        
+        </div>      
+    
+      </div>
+  </div>
+      
+
+</section>
+
+<section class="features ecossistema">
+    <div class="ubk">
+
+      <div class="row">
+      
+        <div class="column six">
+        
+          {{ theme_img('ecossistema-min-min.jpg', 'Ecosystem') }}
+        
+        </div>    
+    
+        <div class="column six">
+        
+          <h2>Ecossistema para turbinar as vendas</h2>
+          <p>Oferecer o melhor sistema ou ser uma plataforma fácil de gerenciar não é o suficiente para conquistar resultados extraordinários.</p>
+          <p>Desfrute de um ecossistema completo com condições diferenciadas para turbinar sua loja e vender online de verdade.</p>
+          <div class="actions">
+            <a href="{{ site_url('planos-e-precos-loja-virtual') }}" class="button invert">Explore o universo Xtech</a>
+          </div>
+        
+        </div>
+    
+    </div>
+    
+  </div>
+
+</section>
+
+{#<section class="features parceiros">#}
+
+{#  <div class="row">#}
+
+{#    <div class="column four">#}
+    
+{#      <h2>Vamos empreender juntos</h2>#}
+{#      <p>Conheça nosso programa de parceria para Designers, Agências, Marketeiros, Blogueiros, Consultores, Programadores e Empreendedores digitais e faça parte da revolução do e-commerce.</p>#}
+{#      <div class="actions">#}
+    
+{#        <a href="{{ site_url('Programa') }}" class="button invert">Entre para a Família Xtech</a>#}
+{#      </div>#}
+    
+{#    </div>#}
+    
+{#    <div class="column eight">#}
+    
+{#      {{ theme_img('parceiros.jpg', 'Parceiros') }}#}
+    
+{#    </div>      #}
+
+{#  </div>#}
+  
+
+{#</section>#}
+
+{% endblock %}

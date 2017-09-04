@@ -1,0 +1,16 @@
+.page-menu .comecar {
+    border: 2px solid;
+    border-radius: 20px;
+    top: -13px;
+    margin-left: 15px;
+    padding: 10px 20px;
+    font-weight: bold;
+}
+
+.page-menu .comecar:hover {
+    background: #fff;
+    border-color: #fff;
+    opacity: 1;
+    /*color: #0060FD;*/
+    color: #0b87c7;
+}

@@ -1,0 +1,14 @@
+<!-- Single -->
+{% set single = get_element(request.get.single) %}
+
+<div class="blog-item">
+    <h2>
+        <div class="date">{{ single.created_at|to_formatted_date }}</div>
+        {{ single['text:title'] }}
+    </h2>
+    <div class="body">
+        {{ single['textarea:body']|raw }}
+    </div>
+</div>
+
+<a href="{{ site_url('blog') }}" class="button blue">&lt; Voltar</a>
